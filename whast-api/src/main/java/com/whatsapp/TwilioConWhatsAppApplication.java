@@ -15,8 +15,8 @@ public class TwilioConWhatsAppApplication {
 	public static final String ACCOUNT_SID = System.getenv("TWILIO_ACCOUNT_SID");
 	public static final String AUTH_TOKEN = System.getenv("TWILIO_AUTH_TOKEN");
 	public static final String WHATSAPP_NUMBER = System.getenv("TWILIO_WHATSAPP_NUMBER");
-	public static final String WHATSAPP_NUMBER_1 = System.getenv("TWILIO_WHATSAPP_NUMBER_1");
-	public static final String WHATSAPP_NUMBER_2 = System.getenv("TWILIO_WHATSAPP_NUMBER_2");
+	public static final String WHATSAPP_NUMBER_1 = System.getenv("CLIENT_WHATSAPP_NUMBER_1");
+	public static final String WHATSAPP_NUMBER_2 = System.getenv("CLIENT_WHATSAPP_NUMBER_2");
 
 	public static void main(String[] args) {
 		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);

@@ -32,13 +32,13 @@ public class TwilioConWhatsAppApplication {
 		}
 
 
-//		Message message = Message.creator(
-//						new PhoneNumber("whatsapp:+5491162125286"),
-//						new PhoneNumber("whatsapp:"+WHATSAPP_NUMBER),
-//						"Hola enviando desde java")
-//				.create();
-//
-//		System.out.println(message.getSid());
+		Message message = Message.creator(
+						new PhoneNumber("whatsapp:"+WHATSAPP_NUMBER_1),
+						new PhoneNumber("whatsapp:"+WHATSAPP_NUMBER),
+						"Hola enviando desde java")
+				.create();
+
+		System.out.println(message.getSid());
 	}
 
 	private static void sendMessage(String to, String messageBody) {

@@ -1,4 +1,4 @@
 package com.whatsapp;
 
-public record RequestMessageText() {
+public record RequestMessageText(String body) {
 }

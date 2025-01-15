@@ -1,5 +1,10 @@
 package com.whatsapp;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.whatsapp.dto.MessaBodyDTO;
+import com.whatsapp.dto.ResponseWhatsApp;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -19,17 +24,23 @@ public class ServiceWhatsApp {
                 .build();
     }
 
-    public String sendMenssage() {
-        RequestMessage requestMessage = new RequestMessage("whatsapp", WHATSAPP_NUMBER_2, new RequestMessageText("Hola, enviando este mensaje desde Java"));
+    public ResponseWhatsApp sendMenssage(MessaBodyDTO payload) {
+        RequestMessage requestMessage = new RequestMessage("whatsapp", payload.number(), new RequestMessageText(payload.message()));
         try {
-            return restClient.post()
+
+            String response = restClient.post()
                     .uri("")
                     .contentType(MediaType.APPLICATION_JSON)
                     .body(requestMessage)
                     .retrieve()
                     .body(String.class);
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.readValue(response, ResponseWhatsApp.class);
         }catch (RestClientException e) {
-            System.err.println("Error enviando mensaje a +5491124864548:" + e.getMessage());
+            System.err.println("Error enviando mensaje a "+payload.number() +": "+ e.getMessage());
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
         }
         return null;
     }

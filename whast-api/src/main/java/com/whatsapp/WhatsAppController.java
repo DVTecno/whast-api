@@ -1,6 +1,9 @@
 package com.whatsapp;
 
+import com.whatsapp.dto.MessaBodyDTO;
+import com.whatsapp.dto.ResponseWhatsApp;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +17,7 @@ public class WhatsAppController {
     }
 
     @PostMapping("/send")
-    public String send() {
-        return serviceWhatsApp.sendMenssage();
+    public ResponseWhatsApp send(@RequestBody MessaBodyDTO payload) {
+        return serviceWhatsApp.sendMenssage(payload);
     }
 }

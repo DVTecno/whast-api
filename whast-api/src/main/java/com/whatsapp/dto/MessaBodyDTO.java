@@ -1,4 +1,4 @@
 package com.whatsapp.dto;
 
-public class MessaBodyDTO {
+public record MessaBodyDTO(String number, String message) {
 }

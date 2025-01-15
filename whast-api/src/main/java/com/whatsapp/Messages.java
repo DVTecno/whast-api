@@ -1,4 +1,4 @@
 package com.whatsapp;
 
-public class Messages {
+public record Messages(String id) {
 }

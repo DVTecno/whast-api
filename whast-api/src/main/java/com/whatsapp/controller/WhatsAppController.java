@@ -1,5 +1,6 @@
-package com.whatsapp;
+package com.whatsapp.controller;
 
+import com.whatsapp.service.ServiceWhatsApp;
 import com.whatsapp.dto.MessaBodyDTO;
 import com.whatsapp.dto.ResponseWhatsApp;
 import org.springframework.web.bind.annotation.PostMapping;

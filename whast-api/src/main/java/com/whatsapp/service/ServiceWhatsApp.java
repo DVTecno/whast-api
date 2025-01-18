@@ -1,7 +1,9 @@
-package com.whatsapp;
+package com.whatsapp.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.whatsapp.dto.RequestMessage;
+import com.whatsapp.dto.RequestMessageText;
 import com.whatsapp.dto.MessaBodyDTO;
 import com.whatsapp.dto.ResponseWhatsApp;
 import org.springframework.beans.factory.annotation.Value;

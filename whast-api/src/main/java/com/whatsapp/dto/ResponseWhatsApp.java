@@ -1,7 +1,8 @@
 package com.whatsapp.dto;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.whatsapp.Messages;
+import com.whatsapp.models.Contacts;
+import com.whatsapp.models.Messages;
 
 import java.util.List;
 

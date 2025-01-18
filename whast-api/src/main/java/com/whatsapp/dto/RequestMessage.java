@@ -1,4 +1,4 @@
-package com.whatsapp;
+package com.whatsapp.dto;
 
 public record RequestMessage(String messaging_product, String messaging_type, String to, RequestMessageText text) {
     public RequestMessage(String messaging_type, String to, RequestMessageText text) {
